@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de arregloAlumnos</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url("https://play-lh.googleusercontent.com/7UIbh7S8Rki0aiLWHZd4gNxZ7ar-ARKN9qfxoW7CLLZaIEi7FstJYHsNibIs3w6xQQ=w240-h480-rw");
+        }
+
+        * {
+            margin: 10px;
+            color: rgba(8, 255, 164, 9);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body onload="mostrarCampos()">
+    <h3>Lista de alumnos en mi clase</h3>
+    <div id="registros">
+    </div>
+    <button id="botonEnviar" onclick="enviar()">Enviar</button>
+    <div id="lista"></div>
+    <button id="botonOrdenar" onclick="ordenar()">Ordenar</button>
+    <script>
+        var arregloAlumnos = [];
+        document.getElementById("botonOrdenar").style.display = "none";
+        function enviar() {
+            arregloAlumnos = [];
+            for (i = 1; i <= alumnos; i++) {
+                arregloAlumnos.push(document.getElementById("alumno" + i).value);
+            }
+            document.getElementById("lista").innerHTML = arregloAlumnos.join("´〰️´");
+            document.getElementById("botonOrdenar").style.display = "inline-block";
+        }
+        function ordenar() {
+            arregloAlumnos.sort();
+            document.getElementById("lista").innerHTML = arregloAlumnos.join("༼ಢ_ಢ༽");
+        }
+        var alumnos = 20;
+        function mostrarCampos() {
+            for (i = 1; i <= alumnos; i++) {
+                document.getElementById("registros").innerHTML += i + '<input type="text" id="alumno' + i + '" placeholder="nombre del alumno"><br>';
+            }
+        }
+    </script>
+</body>
+
+</html>
